@@ -1,0 +1,6 @@
+hello_world:
+    path: /admin-to-user
+    defaults:
+        _controller: Drupal\admin_to_user\Controller\AdminToUserController::replaceuser
+    requirements:
+        _permission: 'access content'

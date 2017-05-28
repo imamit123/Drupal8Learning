@@ -1,0 +1,5 @@
+name: admin_to_user
+type: module
+description: Admin to user.
+package: Other
+core: 8.x
