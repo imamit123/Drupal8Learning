@@ -1,0 +1,4 @@
+admin_to_uaser:configure
+  title: Admin To User
+  description: 'Admin To User.'
+  route_name: admin_to_user.render

@@ -1,0 +1,6 @@
+admin_to_user.render:
+    path: /render
+    defaults:
+        _controller: Drupal\admin_to_user\Controller\AdminToUserController::render
+    requirements:
+        _permission: 'access content'
