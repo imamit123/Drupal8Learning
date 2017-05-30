@@ -1,0 +1,7 @@
+reading_position_indicator.configure:
+  path: '/admin/config/user-interface/reading_position_indicator'
+  defaults:
+    _form: 'Drupal\reading_position_indicator\Form\ReadingPositionIndicatorConfigureForm'
+    _title: 'Reading Position Indicator'
+  requirements:
+    _permission: 'administer reading position indicator'

@@ -1,0 +1,7 @@
+reading_position_indicator.script:
+  js:
+    js/reading_position_indicator.js: {}
+ reading_position_indicator.theme:
+  css:
+    theme:
+      css/reading_position_indicator.css: {}

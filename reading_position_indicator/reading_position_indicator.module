@@ -1,0 +1,49 @@
+<?php
+
+
+/**
+ * Implements hook_preprocess_HOOK() for HTML document templates.
+ */
+function reading_position_indicator_preprocess_html(&$variables) {
+	  $reading_position_indicator_config = $this->config('reading_position_indicator.configure');
+  // If on an individual node page, add the node type to body classes.
+  if (($node = \Drupal::routeMatch()->getParameter('node')) && $node instanceof NodeInterface) {
+    $variables['node_type'] = $node->getType();
+  }
+}
+
+ $selected_theme = $reading_position_indicator_config->get('reading_position_indicator_theme')
+
+ $selected_theme = variable_get('scroll_progress_theme');
+  // Check if PACE is disabled for admin pages and don't load it.
+  if (!$reading_position_indicator_config->get('scroll_progress_load_on_admin_enabled')) {
+    if (!path_is_admin(current_path())) {
+      reading_position_indicator_load_scroll($selected_theme);
+    }
+  }
+  else {
+    reading_position_indicator_load_scroll($selected_theme);
+  }
+}
+
+
+/**
+ * Load js on the basis of selected theme.
+ */
+function reading_position_indicator_load_scroll($selected_theme) {
+  drupal_add_js(array('scroll_progress_color' => variable_get('scroll_progress_color')), 'setting');
+  drupal_add_css(drupal_get_path('module', 'scroll_progress') . '/css/scroll_progress.css');
+  if ($selected_theme == 1) {
+    drupal_add_js(drupal_get_path('module', 'scroll_progress') . '/js/scroll_progress_line.js');
+  }
+  if ($selected_theme == 2) {
+    drupal_add_js(drupal_get_path('module', 'scroll_progress') . '/js/scroll_progress_circular.js');
+  }
+  if ($selected_theme == 3) {
+    drupal_add_js(drupal_get_path('module', 'scroll_progress') . '/js/scroll_progress_animated.js');
+  }
+  if ($selected_theme == 4) {
+    drupal_add_js(drupal_get_path('module', 'scroll_progress') . '/js/scroll_progress_tooltip.js');
+  }
+
+}

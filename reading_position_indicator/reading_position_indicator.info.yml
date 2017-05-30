@@ -1,0 +1,5 @@
+name: Reading Position Indicator
+type: module
+description: 'show scroll progress for users who are reading a page.'
+core: 8.x
+
