@@ -1,0 +1,14 @@
+psi:
+    path: /render
+    defaults:
+        _controller: Drupal\psi\Controller\PsiController::render
+    requirements:
+        _permission: 'access content'
+
+psi.configure:
+  path: '/admin/config/user-interface/psi'
+  defaults:
+    _form: 'Drupal\psi\Form\PsiConfigureForm'
+    _title: 'PSI Configuration'
+  requirements:
+    _permission: 'administer headbar'
