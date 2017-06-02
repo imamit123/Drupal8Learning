@@ -1,7 +1,44 @@
-psi.script:
-  js:
-    js/scroll_progress_line.js: {}
-psi.theme:
+page_scroll_indicator_line:
   css:
-    theme:
+    component:
       css/scroll_progress.css: {}
+  js:
+    js/page_scroll_indicator_line.js: { weight: -1 }
+  dependencies:
+    - core/jquery
+
+page_scroll_indicator_circular:
+  css:
+    component:
+      css/scroll_progress.css: {}
+  js:
+    js/page_scroll_indicator_circular.js: { weight: -1 }
+  dependencies:
+    - core/jquery
+
+page_scroll_indicator_animated:
+  css:
+    component:
+      css/scroll_progress.css: {}
+  js:
+    js/page_scroll_indicator_animated.js: { weight: -1 }
+  dependencies:
+    - core/jquery
+
+page_scroll_indicator_tooltip:
+  css:
+    component:
+      css/scroll_progress.css: {}
+  js:
+    js/page_scroll_indicator_tooltip.js: { weight: -1 }
+  dependencies:
+    - core/jquery
+
+page_scroll_indicator_bottom:
+  css:
+    component:
+      css/scroll_progress.css: {}
+  js:
+    js/page_scroll_indicator_bottom.js: { weight: -1 }
+  dependencies:
+    - core/jquery

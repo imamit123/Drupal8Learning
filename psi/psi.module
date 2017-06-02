@@ -5,11 +5,23 @@
  */
 function psi_preprocess_html(&$variables) {
       $config = \Drupal::config('psi.configure');
-      //$selected_theme = $config->get('scroll_progress_theme');
+      $selected_theme = $config->get('scroll_progress_theme');
       $colour = $config->get('scroll_progress_color');
      // $selected_admin = $config->get('scroll_progress_load_on_admin_enabled');
        $variables['#attached']['drupalSettings']['psi']['colour'] = $colour;
-       $variables['#attached']['library'][] = 'psi/psi.script';
-       $variables['#attached']['library'][] = 'psi/psi.theme';
+
+ if ($selected_theme == 1) {
+    $variables['#attached']['library'][] = 'psi/page_scroll_indicator_line';
+  }
+ if ($selected_theme == 2) {
+     $variables['#attached']['library'][] = 'psi/page_scroll_indicator_circular';
+  }
+
+
+//       $variables['#attached']['library'][] = 'psi/page_scroll_indicator_line';
+  //     $variables['#attached']['library'][] = 'psi/page_scroll_indicator_circular';
+    //   $variables['#attached']['library'][] = 'psi/page_scroll_indicator_line';
+      // $variables['#attached']['library'][] = 'psi/page_scroll_indicator_circular';
+
 
 }
