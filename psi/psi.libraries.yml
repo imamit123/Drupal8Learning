@@ -1,7 +1,7 @@
 psi.script:
   js:
-    js/psi.js: {}
-headbar.theme:
+    js/scroll_progress_line.js: {}
+psi.theme:
   css:
     theme:
       css/scroll_progress.css: {}

@@ -19,4 +19,4 @@ psi.configure:
     _form: 'Drupal\psi\Form\PageScrollIndicatorConfigureForm'
     _title: 'Page Scroll Indicator Configuration'
   requirements:
-    _permission: 'administer psi'    
+    _permission: 'administer psi'
