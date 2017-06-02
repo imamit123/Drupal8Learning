@@ -11,4 +11,12 @@ psi.configure:
     _form: 'Drupal\psi\Form\PsiConfigureForm'
     _title: 'PSI Configuration'
   requirements:
-    _permission: 'administer headbar'
+    _permission: 'administer psi'
+
+psi.configure:
+  path: '/admin/config/user-interface/PageScrollIndicator'
+  defaults:
+    _form: 'Drupal\psi\Form\PageScrollIndicatorConfigureForm'
+    _title: 'Page Scroll Indicator Configuration'
+  requirements:
+    _permission: 'administer psi'    

@@ -1,0 +1,48 @@
+<?php
+
+/**
+ * Implements hook_preprocess_HOOK() for HTML document templates.
+ */
+function psi_preprocess_html(&$variables) {
+   	  $config = \Drupal::config('psi.configure');
+      $selected_theme = $config->get('msg_color');
+    //  $as = scroll_progress_load_scroll($selected_theme);
+        $variables['#attached']['library'][] = 'psi/psi.script';
+        $variables['#attached']['library'][] = 'psi/psi.theme';
+ 
+
+  // // Adds RDF namespace prefix bindings in the form of an RDFa 1.1 prefix
+  // // attribute inside the html element.
+  // if (!isset($variables['html_attributes']['prefix'])) {
+  //   $variables['html_attributes']['prefix'] = [];
+  // }
+  // foreach (rdf_get_namespaces() as $prefix => $uri) {
+  //   $variables['html_attributes']['prefix'][] = $prefix . ': ' . $uri . " ";
+  // }
+}
+
+/**
+ * Load js on the basis of selected theme.
+ */
+function scroll_progress_load_scroll($selected_theme) {
+  
+//	$selected_theme['#attached']['library'][] = 'js/psi.js';
+  // drupal_add_js(array('scroll_progress_color' => variable_get('scroll_progress_color')), 'setting');
+  // drupal_add_css(drupal_get_path('module', 'scroll_progress') . '/css/scroll_progress.css');
+  // if ($selected_theme == 1) {
+  //   drupal_add_js(drupal_get_path('module', 'scroll_progress') . '/js/scroll_progress_line.js');
+  // }
+  // if ($selected_theme == 2) {
+  //   drupal_add_js(drupal_get_path('module', 'scroll_progress') . '/js/scroll_progress_circular.js');
+  // }
+  // if ($selected_theme == 3) {
+  //   drupal_add_js(drupal_get_path('module', 'scroll_progress') . '/js/scroll_progress_animated.js');
+  // }
+  // if ($selected_theme == 4) {
+  //   drupal_add_js(drupal_get_path('module', 'scroll_progress') . '/js/scroll_progress_tooltip.js');
+  // }
+  // if ($selected_theme == 5) {
+  //   drupal_add_js(drupal_get_path('module', 'scroll_progress') . '/js/scroll_progress_bottom.js');
+  // }
+
+}
