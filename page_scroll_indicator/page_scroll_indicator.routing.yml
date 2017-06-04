@@ -1,0 +1,7 @@
+page_scroll_indicator.configure:
+  path: '/admin/config/user-interface/page-scroll-indicator'
+  defaults:
+    _form: 'Drupal\page_scroll_indicator\Form\PageScrollIndicatorConfigureForm'
+    _title: 'Page Scroll Indicator Configuration'
+  requirements:
+    _permission: 'administer page_scroll_indicator'

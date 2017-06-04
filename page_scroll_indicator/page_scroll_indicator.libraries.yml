@@ -1,0 +1,44 @@
+page_scroll_indicator_line:
+  css:
+    component:
+      css/page_scroll_indicator.css: {}
+  js:
+    js/page_scroll_indicator_line.js: { weight: -1 }
+  dependencies:
+    - core/jquery
+
+page_scroll_indicator_circular:
+  css:
+    component:
+      css/page_scroll_indicator.css: {}
+  js:
+    js/page_scroll_indicator_circular.js: { weight: -1 }
+  dependencies:
+    - core/jquery
+
+page_scroll_indicator_animated:
+  css:
+    component:
+      css/page_scroll_indicator.css: {}
+  js:
+    js/page_scroll_indicator_animated.js: { weight: -1 }
+  dependencies:
+    - core/jquery
+
+page_scroll_indicator_tooltip:
+  css:
+    component:
+      css/page_scroll_indicator.css: {}
+  js:
+    js/page_scroll_indicator_tooltip.js: { weight: -1 }
+  dependencies:
+    - core/jquery
+
+page_scroll_indicator_bottom:
+  css:
+    component:
+      css/page_scroll_indicator.css: {}
+  js:
+    js/page_scroll_indicator_bottom.js: { weight: -1 }
+  dependencies:
+    - core/jquery

@@ -1,0 +1,6 @@
+name: Page Scroll Indicator
+type: module
+description: Page Scroll Indicator
+package: Custom
+core: 8.x
+configure: page_scroll_indicator.configure

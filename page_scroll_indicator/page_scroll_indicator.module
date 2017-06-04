@@ -1,0 +1,55 @@
+<?php
+
+/**
+ * @file
+ * Module file for Page Schroll Indicator.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function page_scroll_indicator_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+     case 'help.page.page_scroll_indicator':
+      return '<h3>' . t('Introduction') . '</h3>' . '<p>' . t('It provides a beatiful progress indicator for page scroll.') . '</p>' . '<h3>' . t('Installation') . '</h3>' . '<p>' . t('To install, copy the page scroll indicator directory and all its contents to your modules directory. To enable the module go to Administer > Modules, and enable "page scroll indicator".').'</p>'.'<h3>'.t('Configuration').'</h3>'.'<p>'.t('Go to <a href=":link">configuration page </a>. Choose any of the 4 available Scroll option.
+         You can choose color scheme for indication. Go to any page snd scroll down. Go to permissions page <a href=":permissions">permissions configuration</a> and configure permissions for the "page scroll indicator" visibility and administration.' , array(':link' =>\Drupal::url('page_scroll_indicator.configure'), ':permissions' =>\Drupal::url('user.admin_permissions'))).'</p>';
+  }
+}
+
+
+/**
+ * Implements hook_preprocess_HOOK() for HTML document templates.
+ */
+function page_scroll_indicator_preprocess_html(&$variables) {
+      $config = \Drupal::config('page_scroll_indicator.configure');
+      $option = $config->get('scroll_option');
+      $colour = $config->get('scroll_progress_color');
+     // $selected_admin = $config->get('scroll_progress_load_on_admin_enabled');
+       $variables['#attached']['drupalSettings']['page_scroll_indicator']['colour'] = $colour;
+
+ if ($option == 1) {
+    $variables['#attached']['library'][] = 'page_scroll_indicator/page_scroll_indicator_line';
+  }
+ if ($option == 2) {
+     $variables['#attached']['library'][] = 'page_scroll_indicator/page_scroll_indicator_circular';
+  }
+ if ($option == 3) {
+     $variables['#attached']['library'][] = 'page_scroll_indicator/page_scroll_indicator_animated';
+  }
+  if ($option == 4) {
+     $variables['#attached']['library'][] = 'page_scroll_indicator/page_scroll_indicator_tooltip';
+  }
+ if ($option == 5) {
+     $variables['#attached']['library'][] = 'page_scroll_indicator/page_scroll_indicator_bottom';
+  }
+
+
+//       $variables['#attached']['library'][] = 'page_scroll_indicator/page_scroll_indicator_line';
+  //     $variables['#attached']['library'][] = 'page_scroll_indicator/page_scroll_indicator_circular';
+    //   $variables['#attached']['library'][] = 'page_scroll_indicator/page_scroll_indicator_line';
+      // $variables['#attached']['library'][] = 'page_scroll_indicator/page_scroll_indicator_circular';
+
+
+}
